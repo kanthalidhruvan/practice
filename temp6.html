@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent
+        {
+            display:flex;
+            justify-content: center;
+            align-items:center;
+            height:500px;
+        }
+        .child
+        {
+            background-color: aqua;
+            padding: 10px;
+            margin:10px;
+            border: 2px solid yellow;
+            transition-property:transform;
+            transition-duration:0.25s ;
+            /* border-color: black; */
+        }
+        .child:hover{
+            transform:scale(1.2,1.2)
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align:center;">My projects</h1>
+    <hr>
+    <div class="parent">
+        <div class="child">project1
+            <p>
+                This is all about the project 1 whis is used to dispaly some fucking context so it loks good to see.
+            </p>
+        </div>
+        <div class="child">project2
+            <p>
+                This is all about the project 2 whis is used to dispaly some fucking context so it loks good to see.
+            </p>
+        </div>
+        <div class="child">project3
+            <p>
+                This is all about the project 3 whis is used to dispaly some fucking context so it loks good to see.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
