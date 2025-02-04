@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function f1()
+        {
+            let x=document.getElementById("name").value
+            //alert(x) (for displaying a message)
+            //msg.innerHTML=x*x (after press on enter printing the square of a number)
+            if(x<=40){
+                msg.innerHTML="Better luck next time"
+            }
+            else{
+                msg.innerHTML="Promoted"
+            }
+        }
+    </script>
+</head>
+<body>
+        <input type="number" id="name"> <!--id should be unique-->
+        <button onclick="f1()">Submit</button>
+        <hr>
+        <div id="msg">
+            
+        </div>
+</body>
+</html>
+
+<!-- 4feb2025 learning about javascript -->

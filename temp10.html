@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function f1()
+        {
+            let x=document.getElementById("marks").value
+            if(x>=90)
+            {
+                msg.innerHTML="A-grade"
+            }
+            else if(x<90 && x>=80)
+            {
+                msg.innerHTML="B-grade"
+            }
+            else if(x<80 && x>=70)
+            {
+                msg.innerHTML="C-grade"
+            }
+            else if(x<70 && x>=60)
+            {
+                msg.innerHTML="D-garde"
+            }
+            else if(x<60 && x>=50)
+            {
+                msg.innerHTML="Border pass"
+            }
+            else{
+                msg.innerHTML="Fail-Better luck next time"
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <input type="number" id="marks" placeholder="Enter your marks">
+    <button onclick="f1()">Submit</button>
+    <hr>
+    <div id="msg"></div>
+</body>
+</html>
