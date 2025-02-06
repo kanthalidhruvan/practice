@@ -5,20 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        let x=document.getElementById("a").value;
         //let length=10;
         function table()
         {
-            for(i=1;i<=10;i++){
-           print.innerHTML=`${x}*${i}=${x*i}`
-         }
+            let str="";
+            let x=document.getElementById("a").value
+            for(let i=1;i<=10;i++){
+                str+=`${x} x ${i} = ${x*i}<br>`
+            }
+            p.innerHTML=str
         }
     </script>
 </head>
 <body>
-    <p><input type="text" id="a" placeholder="Enter the number"></p>
+    <p><input type="number" id="a" placeholder="Enter the number" onchange="table()"></p>
     <p><button onclick="table()">Submit</button></p>
     <hr>
-    <div id="print"></div>
+    <div id="p"></div>
 </body>
 </html>
