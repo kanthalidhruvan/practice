@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let users=[];
+        function showLogin(){
+        root.innerHTML = `
+        <h1>Login Form</h1>
+          <p><input type="text" id="b" placeholder="enter email"></p>
+          <p><input type="password" id="c" placeholder="enter password"></p>
+          <p><button onclick="checkuser()">Login</button></p>
+        `
+      }
+      function checkuser()
+      {
+        let email=document.getElementById("email").value
+        let password=document.getElementById("password").value
+        let length=users.length
+        for(let i=0;i<length;i++){
+            if(users[i].email==email && users[i].password==password){
+            root.innerHTML=`<div>Welcome</div>
+        <button onclick="showlogin()">Logout</button>`
+            }
+        }
+        }
+       function showlogin()
+       {
+        root.innerHTML=`<h1>Login form
+            <p><input type="text" id="email"></p>
+            <p><input type="password" id="password"></p>
+            <button onclick="checkuser()">Log In</button>
+            <button onclick="showform()">Create Account</button>
+            `
+       }
+      
+        function showform()
+        {
+            //form using javascript instead of html
+         root.innerHTML=`<p><h2>new user signup form</h2></p><input type="text" id="a" placeholder="Enter name"></p>
+                       <p><input type="text" id="b" placeholder="enter email"></p>
+                       <p><input type="password" id="c" placeholder="enter password"></p>
+                       <p><input type="date" id="d" palceholder="enter date of birth"></p>
+                       <p><button onclick="adduser()">Register</button></p>
+                       <div id="data"></div>`
+
+        }
+        function deleteuser(index)
+        {
+            users.splice(index,1);
+            showusers();
+        }
+        function showusers()
+        {
+            let length=users.length
+            let str=""
+            for(let i=0;i<length;i++){
+                str+=`<div>${users[i].name},
+                    ${users[i].email},
+                    ${users[i].password},
+                    ${users[i].dateofbirth}
+                    <button onclick="deleteuser(${i})">Delete</button></div>`
+            }
+            data.innerHTML=str
+        }
+        function adduser()
+        {
+            let x=document.getElementById("a").value;
+            let y=document.getElementById("b").value;
+            let z=document.getElementById("c").value;
+            let w=document.getElementById("d").value;
+            let user={
+                name:x,
+                email:y,
+                password:z,
+                datofbirth:w
+            }
+            users.push(user)
+            showusers();
+            showLogin()
+            // let length=users.length
+            // let str=""
+            // for(let i=0;i<length;i++){
+            //     str+=`<div>${users[i].name},${users[i].email},${users[i].password},${users[i].dateofbirth}`
+            // }
+            // data.innerHTML=str
+        }
+        //showform()
+    </script>
+    <style>
+        .container
+        {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            
+        }
+        .box
+        {
+            border:2px solid silver;
+            border-radius: 20px;
+            width: 400px;
+            padding: 20px;
+            border-radius: 2px;
+            height: 400px;
+        }
+        button
+        {
+            border-radius: 5px;
+            width: 150px;
+            background-color: blue;
+            color: white;
+            border-color: silver;
+        }
+        input
+        {
+           width: 200px;
+        }
+
+    </style>
+</head>
+<body onload="showform()">
+    <div id="root"></div>
+    <!-- <div class="container">
+        <div class="box">
+    <h1>New user signup form</h1>
+    <p><input type="text" id="a" placeholder="Enter name"></p>
+   <p><input type="text" id="b" placeholder="enter email"></p>
+   <p><input type="password" id="c" placeholder="enter password"></p>
+    <p><input type="date" id="d" palceholder="enter date of birth"></p>
+     <p><button onclick="myfunc()">Login</button></p>
+    <div id="data"></div> -->
+</div>
+</div>
+</body>
+</html>
