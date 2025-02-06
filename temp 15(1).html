@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function myfunc()
+        {
+            let x=document.getElementById("a").value;
+            let y=document.getElementById("b").value;
+            //document.write(x);
+            //document.write(y);
+            data.innerHTML=`${x},${y}`
+        }
+    </script>
+</head>
+<body>
+    <h1>Login form</h1>
+    <p><input type="text" id="a" placeholder="Enter email"></p>
+   <p><input type="password" id="b" placeholder="enter password"></p>
+   <p><button onclick="myfunc()">Login</button></p>
+    <div id="data"></div>
+</body>
+</html>

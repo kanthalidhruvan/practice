@@ -4,12 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <title>Document</title>
+    <style>
+       .container{
+        text-align:center;
+        display: flex;
+        justify-content: center;
+       }
+       .box{
+         border: 2px solid gray;
+         padding: 20px;
+         width: 400px;
+         border-radius: 20px;
+       }
+       input{
+        padding: 20px;
+        width: 90%;
+       }
+       button{
+        background-color: blue;
+        width: 90%;
+        width: 100%;
+        padding: 20px;
+        border-radius: 10px;
+        color:white;
+        font-size: medium;
+       }
+    </style>
     <script>
         function checkuser()
         {
             let username=document.getElementById("name").value
             let password=document.getElementById("password").value
-            if(username !== "john@gmail.com" || password!=="1234"){
+            if(username=="" || password==""){
+                msg.innerHTML="Email Address and password cannot be empty"
+            }
+            else if(username !== "john@gmail.com" || password!=="1234"){
                 msg.innerHTML="Access Denied"
             }
             else{
@@ -23,13 +52,13 @@
     <input type="password" placeholder="Password" style="text-align: center;display: flex;justify-content: center;">
     <button style="background-color: blue;color: aliceblue;border-color: blue;border-radius: 2px;text-align: center;display: flex;justify-content: center;">Log in</button>
     -->
-    <div>
-        <form>
+    <div class="container">
+        <div class="box">
         <p><div id="msg"></div></p>
-        <p><input type="text" required id="name" placeholder="Email address or phone number"></p>
-        <p><input type="password" required id="password" placeholder="Password"></p>
+        <p><input type="text" id="name" placeholder="Email address or phone number"></p>
+        <p><input type="password" id="password" placeholder="Password"></p>
         <button onclick="checkuser()">Log in</button>
-        </form>
+        </div>
     </div>
 </body>
 </html>

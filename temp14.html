@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       function cal(){
+       let x=Number(document.getElementById("n1").value)
+       let y=Number(document.getElementById("n2").value)
+        d1.innerHTML=`${x}+${y}=${x+y}`
+        d2.innerHTML=`${x}-${y}=${x-y}`
+        d3.innerHTML=`${x}*${y}=${x*y}`
+        d4.innerHTML=`${x}/${y}=${x/y}`
+        }
+    </script>
+</head>
+<body>
+    <!--<script>
+        let name="Dhruvan"
+        //document.write("my name is "+name)
+        document.write(`My name is ${name}`);
+    </script>-->
+    <p><input type="number" id="n1" placeholder="enter the number"></p>
+    <p><input type="number" id="n2" placeholder="enter the number"></p>
+    <button onclick="cal()">Submit</button>
+    <p>
+    <div id="d1"></div>
+    <div id="d2"></div>
+    <div id="d3"></div>
+    <div id="d4"></div>
+    </p>
+</body>
+</html>

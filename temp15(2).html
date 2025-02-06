@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function myfunc()
+        {
+            let x=document.getElementById("a").value;
+            let y=document.getElementById("b").value;
+            let z=document.getElementById("c").value;
+            let w=document.getElementById("d").value;
+            data.innerHTML=`${x},${y},${z},${w}`
+        }
+    </script>
+    <style>
+        .container
+        {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            
+        }
+        .box
+        {
+            border:2px solid silver;
+            border-radius: 20px;
+            width: 400px;
+            padding: 20px;
+            border-radius: 2px;
+            height: 400px;
+        }
+        button
+        {
+            border-radius: 5px;
+            width: 150px;
+            background-color: blue;
+            color: white;
+            border-color: silver;
+        }
+        input
+        {
+           width: 200px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+    <h1>New user signup form</h1>
+    <p><input type="text" id="a" placeholder="Enter name"></p>
+   <p><input type="text" id="b" placeholder="enter email"></p>
+   <p><input type="password" id="c" placeholder="enter password"></p>
+    <p><input type="date" id="d" palceholder="enter date of birth"></p>
+     <p><button onclick="myfunc()">Login</button></p>
+    <div id="data"></div>
+</div>
+</div>
+</body>
+</html>
