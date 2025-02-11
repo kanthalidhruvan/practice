@@ -1,35 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script>
-        const ShowProducts=()=>{
-        const products=[
-            {id:1,name:"p1",price:10},
-            {id:2,name:"p2",price:20},
-            {id:3,name:"p3",price:30},
-        ];
-                                                     // products.map((value)=>{
-                                                      //     //console.log(value);
-                                                      // })
-                                                      // products.map((value)=>{
-                                                      //    // console.log(value.price,value.name);
-                                                      // })
-        let str="";
-        products.map((value)=>{
-            str+=`<li>${value.id}-${value.name}-${value.price}-<button>add to cart</button></li>`;
+      const products = [
+        { id: 1, name: "P1", price: 25 },
+        { id: 2, name: "P2", price: 45 },
+        { id: 3, name: "P3", price: 30 },
+      ];
+      const cart = {};
+      const addToCart = (id) => {
+        cart[id] = 1;
+        console.log(cart);
+        showCart();
+      };
+
+      const showCart = () => {
+        let str = "";
+        products.map((value) => {
+          if (cart[value.id]) {
+            str += `
+            <li>${value.name}-$${value.price}-<button>-</button>${cart[value.id]}<button>+</button>-${value.price*cart[value.id]}</li>
+            `;
+          }
         });
-        divproducts.innerHTML=str;
-    };
+        divCart.innerHTML = str;
+      };
+      const showProducts = () => {
+        let str = "";
+        products.map((value) => {
+          str += `
+          <li>${value.id}-${value.name}-${value.price}-<button onclick=addToCart(${value.id})>Add to Cart</button></li>
+          `;
+        });
+        divProducts.innerHTML = str;
+      };
     </script>
-</head>
-<body onload="ShowProducts()">
+  </head>
+  <body onload="showProducts()">
     <h1>My Store</h1>
-    <hr>
-    <p></p><h3>products</h3></p>
-    <div id="divproducts"></div>
-    <p><h3>My Cart</h3></p>
-</body>
+    <hr />
+    <h3>Products</h3>
+    <div id="divProducts"></div>
+    <h3>My Cart</h3>
+    <div id="divCart"></div>
+  </body>
 </html>
