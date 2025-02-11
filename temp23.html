@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const ShowProducts=()=>{
+        const products=[
+            {id:1,name:"p1",price:10},
+            {id:2,name:"p2",price:20},
+            {id:3,name:"p3",price:30},
+        ];
+                                                     // products.map((value)=>{
+                                                      //     //console.log(value);
+                                                      // })
+                                                      // products.map((value)=>{
+                                                      //    // console.log(value.price,value.name);
+                                                      // })
+        let str="";
+        products.map((value)=>{
+            str+=`<li>${value.id}-${value.name}-${value.price}-<button>add to cart</button></li>`;
+        });
+        divproducts.innerHTML=str;
+    };
+    </script>
+</head>
+<body onload="ShowProducts()">
+    <h1>My Store</h1>
+    <hr>
+    <p></p><h3>products</h3></p>
+    <div id="divproducts"></div>
+    <p><h3>My Cart</h3></p>
+</body>
+</html>

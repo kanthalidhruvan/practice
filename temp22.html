@@ -12,12 +12,46 @@
     // {
     //     console.log(products[i])
     // }
-      // products.forEach(value => console.log(value));
+      // products.forEach(value => console.log(value));  no any curly barcakets for the single sentence.
       products.forEach((value)=>{
         console.log("fruit");
         console.log(value);
       });
+      products.forEach((value,index)=>{
+        console.log(value,index);
+      })
+      products.forEach((a,i,ar)=>{
+        console.log(i,a);
+      })
 
+      const product=["apple","orange","mango"];
+      products.map((a,i,ar)=>{
+        console.log(i,a);
+      })
+
+      const num=[10,20,30,40]
+      const newnum=num.map(value=>{
+          return value+5
+      })
+      console.log(newnum)
+     
+      const nums=[10,20,30,40]//same as above part of my code.
+      const newnums=nums.map(value=> value+5)//no return statement for the single statement.and no any curly brackets.
+      console.log(newnum)
+      
+      
+      const num2=[10,20,30,40]
+      const newarr=num2.filter((value)=>value>10)
+      console.log(newarr)
+     
+      //find prints only one value
+      const x=[1,2,3,4]
+      const y=x.find((value)=>value>2)
+      console.log(y)
+      const z=x.find((value)=>value=='2')
+      console.log(z)
+      
+     
     </script>
 </body>
 </html>
