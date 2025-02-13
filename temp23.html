@@ -6,9 +6,9 @@
     <title>Document</title>
     <script>
       const products = [
-        { id: 1, name: "P1", price: 25 },
-        { id: 2, name: "P2", price: 45 },
-        { id: 3, name: "P3", price: 30 },
+        { id: 1, name: "bat", price: 25 },
+        { id: 2, name: "ball", price: 45 },
+        { id: 3, name: "stumps", price: 30 },
       ];
       const cart = {};
       const addToCart = (id) => {
@@ -21,6 +21,12 @@
         console.log(cart);
         showCart();
       };
+      const showtotal=()=>{
+          let x=products.reduce((sum,value)=>{
+           return sum+value.price*cart[value.id];
+          },0);
+          divTotal.innerHTML=x;
+      }
 
       const showCart = () => {
         let str = "";
@@ -32,6 +38,7 @@
           }
         });
         divCart.innerHTML = str;
+        showtotal();
       };
       const add=(id)=>{
         cart[id]+=1;
@@ -61,5 +68,9 @@
     <div id="divProducts"></div>
     <h3>My Cart</h3>
     <div id="divCart"></div>
+    <div id="divTotal"></div>
+    <!-- <p><h3>Total amount</h3></p>
+    <button onclick="total(${value.id})"> -->
+
   </body>
 </html>
