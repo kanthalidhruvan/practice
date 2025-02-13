@@ -23,9 +23,13 @@
       };
       const showtotal=()=>{
           let x=products.reduce((sum,value)=>{
-           return sum+value.price*cart[value.id];
+          //   if(cart[value.id]){
+          //  return sum+value.price*cart[value.id];
+          //   }
+          //   return sum;
+          return sum+value.price*(cart[value.id]?cart[value.id]:0);
           },0);
-          divTotal.innerHTML=x;
+          divTotal.innerHTML=`Total Price : $${x}`;
       }
 
       const showCart = () => {
@@ -38,6 +42,8 @@
           }
         });
         divCart.innerHTML = str;
+        let count=Object.keys(cart).length
+        items.innerHTML=count
         showtotal();
       };
       const add=(id)=>{
@@ -63,6 +69,7 @@
   </head>
   <body onload="showProducts()">
     <h1>My Store</h1>
+    <h4>cart:<span id="items"></span></h4>
     <hr />
     <h3>Products</h3>
     <div id="divProducts"></div>
