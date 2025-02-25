@@ -53,6 +53,7 @@
       }
       const sub=(id)=>{
         cart[id]-=1;
+        cart[id]<1 && delete cart[id];
         console.log(cart);
         showCart();
       }
@@ -65,6 +66,8 @@
         });
         divProducts.innerHTML = str;
       };
+      const displaycart=()=>
+      
     </script>
   </head>
   <body onload="showProducts()">
@@ -73,9 +76,12 @@
     <hr />
     <h3>Products</h3>
     <div id="divProducts"></div>
+    <div id="divcartblock" style="display: none;">
     <h3>My Cart</h3>
     <div id="divCart"></div>
     <div id="divTotal"></div>
+    <button onclick="hidecart()">close</button>
+    </div>
     <!-- <p><h3>Total amount</h3></p>
     <button onclick="total(${value.id})"> -->
 
